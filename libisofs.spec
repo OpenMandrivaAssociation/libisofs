@@ -17,6 +17,7 @@ Source: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: doxygen
 BuildRequires: graphviz
+BuildRequires: libburn
 
 %description
 Libisofs is a library that handles creating ISO disc image files. It
