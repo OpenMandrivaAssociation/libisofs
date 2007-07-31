@@ -1,5 +1,5 @@
 %define name    libisofs
-%define version 0.2.4
+%define version 0.2.5
 %define rel 	1
 
 %define major 	4
@@ -15,9 +15,9 @@ License: 	GPL
 Group: 		System/Libraries
 Source: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: doxygen
-BuildRequires: graphviz
-BuildRequires: libburn-devel
+BuildRequires:	doxygen
+BuildRequires:	graphviz
+BuildRequires:	libburn-devel
 
 %description
 Libisofs is a library that handles creating ISO disc image files. It
