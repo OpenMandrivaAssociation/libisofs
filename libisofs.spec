@@ -1,4 +1,10 @@
 %define name    libisofs
+# 0.2.8 is available upstream. I know. We ship only one app which
+# actually uses libisofs - brasero. Brasero 0.6.0 does not work with
+# libisofs versions beyond 0.2.5. Do NOT update this package past
+# 0.2.5 unless you are 100% sure a version of Brasero which works
+# with the newer version of this package is available, and you are
+# also going to update Brasero. -AdamW 2007/08
 %define version 0.2.5
 %define rel 	1
 
