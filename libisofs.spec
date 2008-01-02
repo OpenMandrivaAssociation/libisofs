@@ -20,6 +20,7 @@ Url: 		http://libburnia.pykix.org/
 License: 	GPLv2+
 Group: 		System/Libraries
 Source: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
+Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	libburn-devel
