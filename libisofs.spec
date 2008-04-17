@@ -1,25 +1,15 @@
-%define name    libisofs
-# We ship only one app which
-# actually uses libisofs - brasero. Brasero 0.6.0 does not work with
-# libisofs versions beyond 0.2.8. Do NOT update this package past
-# 0.2.8 unless you are 100% sure a version of Brasero which works
-# with the newer version of this package is available, and you are
-# also going to update Brasero. -AdamW 2007/08
-%define version 0.2.8
-%define rel 	1
-
-%define major 	5
-%define libname %mklibname isofs %major
-%define develname %mklibname isofs -d
+%define major		6
+%define libname		%mklibname isofs %major
+%define develname	%mklibname isofs -d
 
 Summary: 	Library for creating ISO disc images
-Name: 		%name
-Version: 	%version
-Release: 	%mkrel %rel
-Url: 		http://libburnia.pykix.org/
+Name: 		libisofs
+Version: 	0.6.2.1
+Release: 	%mkrel 1
+URL: 		http://libburnia.pykix.org/
 License: 	GPLv2+
 Group: 		System/Libraries
-Source: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
+Source0: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	doxygen
 BuildRequires:	graphviz
@@ -56,7 +46,7 @@ This package includes the header files for the %{name} package.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %makeinstall
 
@@ -67,18 +57,18 @@ doxygen doc/doxygen.conf
 %postun -n %{libname} -p /sbin/ldconfig
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%doc README AUTHORS COPYRIGHT
-%_libdir/libisofs.so.%{major}*
+%{_libdir}/libisofs.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
-%_libdir/libisofs.so
-%_libdir/libisofs.la
-%_libdir/libisofs.a
-%_libdir/pkgconfig/*.pc
-%_includedir/%name/
+%doc README AUTHORS COPYRIGHT
+%{_libdir}/libisofs.so
+%{_libdir}/libisofs.la
+%{_libdir}/libisofs.a
+%{_libdir}/pkgconfig/*.pc
+%{_includedir}/%{name}
 
