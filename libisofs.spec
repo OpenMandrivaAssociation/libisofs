@@ -4,12 +4,12 @@
 
 Summary: 	Library for creating ISO disc images
 Name: 		libisofs
-Version: 	0.6.2.1
+Version: 	0.6.4
 Release: 	%mkrel 1
-URL: 		http://libburnia.pykix.org/
+URL: 		http://libburnia-project.org/
 License: 	GPLv2+
 Group: 		System/Libraries
-Source0: 	http://libburnia-download.pykix.org/releases/%{name}-%{version}.tar.gz
+Source0: 	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	doxygen
 BuildRequires:	graphviz
