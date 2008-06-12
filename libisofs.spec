@@ -4,8 +4,8 @@
 
 Summary: 	Library for creating ISO disc images
 Name: 		libisofs
-Version: 	0.6.4
-Release: 	%mkrel 2
+Version: 	0.6.6
+Release: 	%mkrel 1
 URL: 		http://libburnia-project.org/
 License: 	GPLv2+
 Group: 		System/Libraries
