@@ -4,9 +4,9 @@
 
 Summary: 	Library for creating ISO disc images
 Name: 		libisofs
-Version: 	0.6.6
-Release: 	%mkrel 2
-URL: 		http://libburnia-project.org/
+Version: 	0.6.10
+Release: 	%mkrel 1
+URL: 		http://libburnia-project.org/wiki/Libisofs
 License: 	GPLv2+
 Group: 		System/Libraries
 Source0: 	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
@@ -42,13 +42,13 @@ This package includes the header files for the %{name} package.
 %setup -q
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
 rm -rf %{buildroot}
 
-%makeinstall
+%makeinstall_std
 
 # build documentation
 doxygen doc/doxygen.conf
