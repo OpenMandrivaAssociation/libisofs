@@ -1,28 +1,28 @@
-%define major		6
-%define libname		%mklibname isofs %major
-%define develname	%mklibname isofs -d
+%define major 6
+%define libname %mklibname isofs %{major}
+%define develname %mklibname isofs -d
 
-Summary: 	Library for creating ISO disc images
-Name: 		libisofs
-Version: 	0.6.10
-Release: 	%mkrel 1
-URL: 		http://libburnia-project.org/wiki/Libisofs
-License: 	GPLv2+
-Group: 		System/Libraries
-Source0: 	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
-Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Summary:	Library for creating ISO disc images
+Name:		libisofs
+Version:	0.6.12
+Release:	%mkrel 1
+License:	GPLv2+
+Group:		System/Libraries
+URL:		http://libburnia-project.org/wiki/Libisofs
+Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	libburn-devel
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Libisofs is a library that handles creating ISO disc image files. It
 is intended to work together with libburn to write these images to
 discs.
 
-%package -n	%{libname}
-Group:		System/Libraries
+%package -n %{libname}
 Summary:	Library for creating ISO disc images
+Group:		System/Libraries
 
 %description -n %{libname}
 Libisofs is a library that handles creating ISO disc image files. It
@@ -30,10 +30,10 @@ is intended to work together with libburn to write these images to
 discs.
 
 %package -n %{develname}
-Group:          Development/C
-Summary:        Header files for development with %name
-Provides:       %{name}-devel = %{version}
-Requires:       %{libname} = %{version}
+Summary:	Header files for development with %{name}
+Group:		Development/C
+Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{version}-%{release}
 
 %description -n %{develname}
 This package includes the header files for the %{name} package.
@@ -75,4 +75,3 @@ rm -rf %{buildroot}
 %{_libdir}/libisofs.a
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/%{name}
-
