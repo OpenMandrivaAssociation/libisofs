@@ -4,7 +4,7 @@
 
 Summary:	Library for creating ISO disc images
 Name:		libisofs
-Version:	0.6.36
+Version:	0.6.38
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		System/Libraries
