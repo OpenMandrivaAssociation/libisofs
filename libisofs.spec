@@ -4,8 +4,8 @@
 
 Summary:	Library for creating ISO disc images
 Name:		libisofs
-Version:	1.1.6
-Release:	%mkrel 1
+Version:	1.2.0
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://libburnia-project.org/wiki/Libisofs
@@ -46,32 +46,19 @@ This package includes the header files for the %{name} package.
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
+
+rm -f %{buildroot}/%{_libdir}/{*.la,*.a}
 
 # build documentation
 doxygen doc/doxygen.conf
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
 
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/libisofs.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root)
 %doc README AUTHORS COPYRIGHT
 %{_libdir}/libisofs.so
-%{_libdir}/libisofs.la
-%{_libdir}/libisofs.a
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/%{name}
