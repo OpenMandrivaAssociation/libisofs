@@ -5,7 +5,7 @@
 Summary:	Library for creating ISO disc images
 Name:		libisofs
 Version:	1.2.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://libburnia-project.org/wiki/Libisofs
@@ -13,7 +13,6 @@ Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	libburn-devel >= 1.1.4
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Libisofs is a library that handles creating ISO disc image files. It
@@ -32,7 +31,7 @@ discs.
 %package -n %{develname}
 Summary:	Header files for development with %{name}
 Group:		Development/C
-Provides:	%{name}-devel = %{version}-%{release}
+Provides:	libisofs-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
 
 %description -n %{develname}
