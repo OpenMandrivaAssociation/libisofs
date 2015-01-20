@@ -1,11 +1,11 @@
-%define major	6
-%define libname	%mklibname isofs %{major}
-%define devname	%mklibname isofs -d
+%define major 6
+%define libname %mklibname isofs %{major}
+%define devname %mklibname isofs -d
 
 Summary:	Library for creating ISO disc images
 Name:		libisofs
-Version:	1.3.0
-Release:	8
+Version:	1.3.8
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://libburnia-project.org/wiki/Libisofs
@@ -41,7 +41,9 @@ This package includes the header files for the %{name} package.
 %setup -q
 
 %build
-%configure2_5x --disable-static
+%configure \
+	--disable-static
+
 %make
 
 %install
