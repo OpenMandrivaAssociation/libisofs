@@ -1,4 +1,2 @@
-removed_sources:
-  libisofs-1.4.6.tar.gz: 6aa110d31240389d76003294f824899777bf68b4
 sources:
-  libisofs-1.4.8.tar.gz: f487a6c9cb713fd7f0aab21860f219ac2267801f
+  libisofs-1.5.0.tar.gz: c158b3e91f4c774d61cd46a31e4bcb8a9b2b65ee
