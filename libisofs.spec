@@ -1,15 +1,16 @@
 %define major 6
 %define libname %mklibname isofs %{major}
 %define devname %mklibname isofs -d
+%define beta rc1
 
 Summary:	Library for creating ISO disc images
 Name:		libisofs
-Version:	1.5.2
-Release:	1
+Version:	1.5.4
+Release:	%{?beta:0.%{beta}.}1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://libburnia-project.org/wiki/Libisofs
-Source0:	http://files.libburnia-project.org/releases/%{name}-%{version}.tar.gz
+Source0:	https://dev.lovelyhq.com/libburnia/libisofs/archive/release-%{version}%{?beta:.%{beta}}.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	pkgconfig(libburn-1)
@@ -38,12 +39,10 @@ Requires:	%{libname} = %{version}-%{release}
 This package includes the header files for the %{name} package.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}
+%configure
 
 %build
-%configure \
-	--disable-static
-
 %make_build
 
 %install
