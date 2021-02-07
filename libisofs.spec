@@ -6,11 +6,13 @@
 Summary:	Library for creating ISO disc images
 Name:		libisofs
 Version:	1.5.4
-Release:	%{?beta:0.%{beta}.}1
+Release:	%{?beta:0.%{beta}.}2
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://libburnia-project.org/wiki/Libisofs
 Source0:	https://dev.lovelyhq.com/libburnia/libisofs/archive/release-%{version}%{?beta:.%{beta}}.tar.gz
+# From https://www.gnu.org/software/xorriso/ 's internal copy of libisofs
+Patch0:		xorriso-1.5.4-1.5.4.pl02.patch
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	pkgconfig(libburn-1)
