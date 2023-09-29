@@ -1,18 +1,17 @@
 %define major 6
-%define libname %mklibname isofs %{major}
+%define oldlibname %mklibname isofs 6
+%define libname %mklibname isofs
 %define devname %mklibname isofs -d
-%define beta rc1
+#define beta rc1
 
 Summary:	Library for creating ISO disc images
 Name:		libisofs
-Version:	1.5.4
-Release:	%{?beta:0.%{beta}.}2
+Version:	1.5.6.pl01
+Release:	%{?beta:0.%{beta}.}1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://libburnia-project.org/wiki/Libisofs
-Source0:	https://dev.lovelyhq.com/libburnia/libisofs/archive/release-%{version}%{?beta:.%{beta}}.tar.gz
-# From https://www.gnu.org/software/xorriso/ 's internal copy of libisofs
-Patch0:		xorriso-1.5.4-1.5.4.pl02.patch
+Source0:	https://dev.lovelyhq.com/libburnia/libisofs/archive/release-%{version}.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
 BuildRequires:	pkgconfig(libburn-1)
@@ -25,6 +24,7 @@ discs.
 %package -n %{libname}
 Summary:	Library for creating ISO disc images
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 Libisofs is a library that handles creating ISO disc image files. It
