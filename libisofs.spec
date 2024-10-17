@@ -10,7 +10,7 @@ Version:	1.5.6.pl01
 Release:	%{?beta:0.%{beta}.}1
 License:	GPLv2+
 Group:		System/Libraries
-Url:		http://libburnia-project.org/wiki/Libisofs
+Url:		https://libburnia-project.org/wiki/Libisofs
 Source0:	https://dev.lovelyhq.com/libburnia/libisofs/archive/release-%{version}.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
