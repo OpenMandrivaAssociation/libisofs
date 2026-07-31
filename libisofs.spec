@@ -6,7 +6,7 @@
 
 Summary:	Library for creating ISO disc images
 Name:		libisofs
-Version:	1.5.8
+Version:	1.5.8.pl02
 Release:	%{?beta:0.%{beta}.}1
 License:	GPLv2+
 Group:		System/Libraries
@@ -46,7 +46,7 @@ Requires:	%{libname} = %{version}-%{release}
 This package includes the header files for the %{name} package.
 
 %prep
-%autosetup -p1 -n %{name}
+%autosetup -p1 -n libisofs
 %configure
 
 %build
